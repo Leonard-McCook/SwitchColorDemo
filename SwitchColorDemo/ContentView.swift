@@ -7,9 +7,32 @@
 
 import SwiftUI
 
+var colors = [
+    
+    Color.red,
+    Color.blue,
+    Color.teal,
+    Color.mint,
+    Color.green,
+    Color.yellow,
+    Color.orange,
+    Color.purple,
+    Color.pink,
+    Color.brown,
+    Color.gray,
+    Color.black,
+    Color.white,
+    Color.cyan,
+    Color.magenta,
+    Color.indigo
+    
+]
+
+
 struct ContentView: View {
+
     var body: some View {
-        VStack {
+        ZStack {
             Image(systemName: "globe")
                 .imageScale(.large)
                 .foregroundStyle(.tint)
