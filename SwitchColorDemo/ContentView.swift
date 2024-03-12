@@ -23,19 +23,19 @@ var colors = [
     Color.black,
     Color.white,
     Color.cyan,
-    Color.magenta,
     Color.indigo
     
 ]
 
 
 struct ContentView: View {
-
+    @State var color1 = colors.randomElement()
+    @State var color2 = colors.randomElement()
+    
+    
     var body: some View {
         ZStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
+            LinearGradient(colors: [color1!, color2!], startPoint: .topLeading, endPoint: .bottomTrailing).ignoresSafeArea()
             Text("Hello, world!")
         }
         .padding()
