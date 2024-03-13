@@ -28,6 +28,7 @@ var colors = [
 ]
 
 
+
 struct ContentView: View {
     @State var color1 = colors.randomElement()
     @State var color2 = colors.randomElement()
@@ -36,9 +37,16 @@ struct ContentView: View {
     var body: some View {
         ZStack {
             LinearGradient(colors: [color1!, color2!], startPoint: .topLeading, endPoint: .bottomTrailing).ignoresSafeArea()
-            Text("Hello, world!")
+            
+            Button("Change Color") {
+                 color1 = colors.randomElement()
+                 color2 = colors.randomElement()
+            }
+            .padding()
+            .foregroundStyle(.black)
+            .background(.thinMaterial, in: RoundedRectangle(cornerRadius: 10))
         }
-        .padding()
+        
     }
 }
 
