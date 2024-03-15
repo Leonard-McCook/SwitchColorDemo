@@ -32,6 +32,8 @@ var colors = [
 struct ContentView: View {
     @State var color1 = colors.randomElement()
     @State var color2 = colors.randomElement()
+    @State var color3 = colors.randomElement()
+    @State var color4 = colors.randomElement()
     
     
     var body: some View {
@@ -39,8 +41,28 @@ struct ContentView: View {
             LinearGradient(colors: [color1!, color2!], startPoint: .topLeading, endPoint: .bottomTrailing).ignoresSafeArea()
             
             Button("Change Color") {
-                 color1 = colors.randomElement()
-                 color2 = colors.randomElement()
+                color1 = colors.randomElement()
+                color2 = colors.randomElement()
+            }
+            
+            Button("Change Color") {
+                     color3 = colors.randomElement()
+                     color4 = colors.randomElement()
+                
+            }
+            .padding()
+            .foregroundStyle(.black)
+            .background(.thinMaterial, in: RoundedRectangle(cornerRadius: 10))
+        }
+        
+        ZStack {
+            LinearGradient(colors: [color3!, color4!], startPoint: .topLeading, endPoint: .bottomTrailing).ignoresSafeArea()
+            
+            
+            Button("Change Color") {
+                     color3 = colors.randomElement()
+                     color4 = colors.randomElement()
+                
             }
             .padding()
             .foregroundStyle(.black)
